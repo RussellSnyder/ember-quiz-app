@@ -1,0 +1,9 @@
+.poll li:hover {
+  cursor: pointer;
+}
+.poll li.selected {
+  font-weight: bold;
+}
+.poll li.selected:before {
+  content: '\00bb';
+}

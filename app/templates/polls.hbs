@@ -1,0 +1,9 @@
+{{outlet}}
+<footer>
+  other quizes
+  <ul class="list-unstyled">
+    {{#each model as |poll|}}
+      <li><LinkTo @route="polls.poll" @model={{poll.id}}>{{poll.prompt}}</LinkTo></li>
+    {{/each}}
+  </ul>
+</footer>

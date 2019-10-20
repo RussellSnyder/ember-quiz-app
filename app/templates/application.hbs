@@ -1,5 +1,11 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<header class="container">
+  <div class="col-md-8 offset-md-2 mb-3 p-3">
+    {{#link-to "index"}}
+      <img src="/assets/images/logo.png" alt="logo for main logo" class="img-fluid col-6 col-sm-8 mx-auto d-block mb-3">
+    {{/link-to}}
+    <h2 class="text-center">Should You Date My Friend?</h2>
+  </div>
+</header>
+<div class="container">
+  {{outlet}}
+</div>

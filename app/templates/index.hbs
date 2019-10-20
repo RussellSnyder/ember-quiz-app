@@ -1,0 +1,25 @@
+<div class="container">
+  <header class="text-center">
+    <h2 class="text-underlined">
+      Make a new quiz
+    </h2>
+  </header>
+  <hr>
+  <main class="card mb-4">
+    <div class="card-body">
+      <form {{action "createPoll" model on="submit"}}>
+        <div class="form-group">
+          <label for="question">Question</label>
+          <Input @value={{model.prompt}} type="text" class="form-control" id="question" />
+        </div>
+        {{#each model.options as |option index| }}
+        <div class="form-group">
+          <label for="question">Option {{add index 1}}</label>
+          <Input @value={{option.label}} type="text" class="form-control" @id={{option.id}} />
+        </div>
+        {{/each}}
+        <button type="submit" class="btn btn-success col-12">Create A Poll</button>
+      </form>
+    </div>
+  </main>
+</div>

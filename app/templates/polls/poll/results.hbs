@@ -1,0 +1,23 @@
+{{outlet}}
+<header>
+  <h3>Results for "{{model.prompt}}" (votes: {{model.voteCount}})</h3>
+  <ul class="list-unstyled">
+    {{# each model.sortedOptions as |option| }}
+      <li>
+        <div class="row">
+          <div class="col-sm-6">
+            {{option.label}}
+          </div>
+          <div class="col-sm-6">
+            <OptionTally
+              @totalVoteCount={{model.voteCount}}
+              @voteCount={{option.voteCount}}
+            />
+          </div>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+
+  {{#link-to "polls.poll" class="btn btn-primary"}}Back{{/link-to}}
+</header>

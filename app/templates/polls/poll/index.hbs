@@ -1,0 +1,18 @@
+<main class="poll">
+  {{#link-to "polls.poll.results" class="btn btn-primary"}}to results{{/link-to}}
+
+  <h3>{{model.poll.prompt}}</h3>
+    <ul class="list-group mb-2">
+  {{# each model.poll.options as |option|}}
+    <li class="list-group-item {{if (eq model.option option) "selected"}}"
+      {{action "toggleOption" model option}}>
+          {{option.label}}
+    </li>
+  {{/each}}
+  </ul>
+  <a class="btn btn-success" {{action "castVote" model}}>
+    Vote
+  </a>
+
+</main>
+
